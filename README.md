@@ -374,55 +374,5 @@ def analyze_image():
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
----
-
-## 🆘 Soporte
-
-### Documentación
-- 📚 **Wiki**: [github.com/tu-usuario/astrai/wiki](https://github.com/tu-usuario/astrai/wiki)
-- 📖 **API Docs**: [astrai.readthedocs.io](https://astrai.readthedocs.io)
-- 🎥 **Tutoriales**: [YouTube Channel](https://youtube.com/astrai)
-
-### Comunidad
-- 💬 **Discord**: [discord.gg/astrai](https://discord.gg/astrai)
-- 📧 **Email**: support@astrai.com
-- 🐦 **Twitter**: [@AstrAI_Medical](https://twitter.com/AstrAI_Medical)
-
-### Soporte Comercial
-Para soporte empresarial y licencias comerciales:
-- 🏢 **Empresas**: enterprise@astrai.com
-- 🏥 **Hospitales**: hospitals@astrai.com
-- 🎓 **Académico**: academic@astrai.com
-
----
-
-## 🙏 Reconocimientos
-
-### Equipo de Desarrollo
-- 👨‍💻 **Dr. Juan Pérez** - Lead Developer & Medical Advisor
-- 👩‍🔬 **Dra. Ana García** - Clinical Validation Specialist
-- 👨‍💼 **Carlos López** - AI/ML Engineer
-- 👩‍💻 **María Rodríguez** - Frontend Developer
-
-### Colaboradores
-Agradecemos a todos los [colaboradores](https://github.com/tu-usuario/astrai/contributors) que han hecho posible este proyecto.
-
-### Instituciones Colaboradoras
-- 🏥 Hospital General de México
-- 🎓 Instituto Tecnológico de Monterrey
-- 🏥 Hospital ABC (México)
-- 🎓 UNAM - Facultad de Medicina
-
----
-
-<div align="center">
-
-**¿Te gusta AstrAI? ¡Dale una ⭐ en GitHub!**
-
-[![Estrella en GitHub](https://img.shields.io/github/stars/tu-usuario/astrai?style=social)](https://github.com/tu-usuario/astrai)
-
-</div>
-
----
 
 *Desarrollado con ❤️ para la comunidad médica mundial*
