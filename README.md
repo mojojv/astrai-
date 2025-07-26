@@ -259,32 +259,3 @@ Acceder a los dashboards:
 
 Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## Soporte
-
-- **Issues**: [GitHub Issues](https://github.com/astrai-team/cancer-detection/issues)
-- **Documentación**: [Wiki del Proyecto](https://github.com/astrai-team/cancer-detection/wiki)
-- **Email**: support@astrai.com
-
-## Citas y Referencias
-
-Si utiliza ASTRAI en su investigación, por favor cite:
-
-```bibtex
-@software{astrai_cancer_detection,
-  title={ASTRAI: AI System for Thyroid Risk Assessment and Interpretation},
-  author={ASTRAI Team},
-  year={2024},
-  url={https://github.com/astrai-team/cancer-detection}
-}
-```
-
-## Agradecimientos
-
-- Equipo médico del Hospital XYZ por la validación clínica
-- Comunidad de PyTorch por las herramientas de deep learning
-- Hugging Face por los modelos de lenguaje preentrenados
-
----
-
-**ASTRAI Cancer Detection System** - Revolucionando el diagnóstico médico con IA
-
