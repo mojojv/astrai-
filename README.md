@@ -374,5 +374,3 @@ def analyze_image():
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
-
-*Desarrollado con ❤️ para la comunidad médica mundial*
