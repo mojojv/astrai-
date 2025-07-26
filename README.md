@@ -1,376 +1,290 @@
-# 🌟 AstrAI - Sistema Avanzado de Análisis de Imágenes Médicas
+# ASTRAI Cancer Detection System
 
-<div align="center">
+![ASTRAI Logo](docs/images/astrai_logo.png)
 
-![AstrAI Logo](https://img.shields.io/badge/AstrAI-IA%20Médica-blue?style=for-the-badge&logo=medical-cross)
+[![CI/CD Pipeline](https://github.com/astrai-team/cancer-detection/workflows/CI/badge.svg)](https://github.com/astrai-team/cancer-detection/actions)
+[![Code Coverage](https://codecov.io/gh/astrai-team/cancer-detection/branch/main/graph/badge.svg)](https://codecov.io/gh/astrai-team/cancer-detection)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red?style=flat-square&logo=pytorch)](https://pytorch.org/)
-[![Licencia](https://img.shields.io/badge/Licencia-MIT-green?style=flat-square)](LICENSE)
-[![Documentación](https://img.shields.io/badge/Docs-Disponible-brightgreen?style=flat-square)](docs/)
-[![Tests](https://img.shields.io/badge/Pruebas-Pasando-success?style=flat-square)](tests/)
+## Descripción General
 
-**Revolucionando el Análisis de Imágenes Médicas con IA Híbrida**
+ASTRAI (Artificial Intelligence System for Thyroid Risk Assessment and Interpretation) es un sistema avanzado de inteligencia artificial diseñado para la detección y análisis automatizado de cáncer tiroideo mediante la combinación de modelos de visión por computadora (CNNs) y modelos de lenguaje grandes (LLMs). El sistema proporciona análisis médico automatizado, clasificación TI-RADS, y generación de reportes médicos profesionales.
 
-[Demo](#demo) • [Instalación](#instalación) • [Documentación](docs/) • [Ejemplos](#ejemplos) • [Contribuir](#contribuir)
+### Características Principales
 
-</div>
+- **Segmentación Automática**: Identificación precisa de glándula tiroides, nódulos y calcificaciones
+- **Clasificación TI-RADS**: Evaluación automática según estándares médicos internacionales
+- **Análisis LLM**: Interpretación médica en lenguaje natural y generación de reportes
+- **Soporte Multi-formato**: Compatible con DICOM, PNG, JPG y otros formatos médicos
+- **API REST**: Interfaz programática para integración con sistemas hospitalarios
+- **GUI Intuitiva**: Interfaz gráfica para uso clínico directo
+- **Despliegue Escalable**: Arquitectura containerizada para producción
 
----
+## Arquitectura del Sistema
 
-## 🚀 Descripción General
-
-**AstrAI** es un sistema de vanguardia para análisis de imágenes médicas que combina **arquitecturas CNN de Deep Learning** con **analítica radiológica avanzada** para proporcionar soporte diagnóstico integral de nivel clínico para profesionales médicos.
-
-### 🎯 Características Principales
-
-- **🧠 Arquitectura CNN Híbrida**: EfficientNet + U-Net para clasificación y segmentación simultánea
-- **🔒 Sistema de Respaldo Robusto**: Respaldo ResNet18 garantiza 99.9% de confiabilidad
-- **📊 Radiología Avanzada**: Más de 50 características de textura, morfológicas e intensidad
-- **⚖️ Integración BI-RADS**: Sistema automático de categorización BI-RADS
-- **📈 Dashboards Interactivos**: Análisis en tiempo real con visualizaciones Plotly
-- **🏥 Reportes Clínicos**: Reportes médicos automatizados de nivel hospitalario
-- **🔬 Análisis Poblacional**: Análisis de biomarcadores y modelado predictivo
-- **📱 Listo para Producción**: Soporte Docker, CI/CD y despliegue empresarial
-
----
-
-## 🏥 Aplicaciones Clínicas
-
-| Aplicación | Precisión | Sensibilidad | Especificidad | Casos Validados |
-|------------|-----------|--------------|---------------|-----------------|
-| **Detección de Cáncer de Mama** | 94.2% | 96.1% | 92.8% | 15,000+ |
-| **Análisis de Densidad Mamaria** | 91.5% | 89.3% | 93.7% | 8,500+ |
-| **Evaluación de Asimetría** | 88.9% | 91.2% | 86.4% | 12,000+ |
-| **Caracterización de Lesiones** | 92.7% | 90.8% | 94.1% | 6,200+ |
-
----
-
-## 🔬 Tecnología Avanzada
-
-### Arquitectura Neural Híbrida
-```python
-# Modelo principal con respaldo automático
-modelo_principal = HybridCNNModel()  # EfficientNet + U-Net
-modelo_respaldo = SimpleCNNFallback()  # ResNet18 confiable
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Data Layer    │    │  Model Layer    │    │ Service Layer   │
+│                 │    │                 │    │                 │
+│ • DICOM Handler │    │ • CNN Models    │    │ • REST API      │
+│ • Preprocessor  │    │ • LLM Models    │    │ • GUI           │
+│ • Dataset       │    │ • Fusion Logic  │    │ • Monitoring    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-### Análisis Radiológico Integral
-- **Características GLCM**: Análisis de textura de matriz de co-ocurrencia
-- **Morfología Avanzada**: Compacidad, circularidad, excentricidad
-- **Estadísticas de Intensidad**: Skewness, kurtosis, entropía
-- **Análisis de Asimetría**: Comparación bilateral automatizada
-
-### Pipeline de Procesamiento
-```mermaid
-graph TD
-    A[Imagen Médica] --> B[Preprocesamiento]
-    B --> C[CNN Híbrida]
-    C --> D[Extracción de Características]
-    D --> E[Análisis Radiológico]
-    E --> F[Evaluación de Riesgo]
-    F --> G[Reporte Clínico]
-```
-
----
-
-## 🛠️ Instalación
+## Instalación Rápida
 
 ### Requisitos del Sistema
-- **Python**: 3.8 o superior
-- **GPU**: NVIDIA con CUDA 11.0+ (opcional pero recomendado)
-- **RAM**: Mínimo 8GB, recomendado 16GB
-- **Almacenamiento**: 5GB para modelos y dependencias
 
-### Instalación Rápida
+- Python 3.9 o superior
+- CUDA 11.8+ (opcional, para aceleración GPU)
+- Docker y Docker Compose (para despliegue)
+- 8GB RAM mínimo (16GB recomendado)
+- 50GB espacio en disco para modelos
+
+### Instalación Local
+
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/astrai.git
-cd astrai
+git clone https://github.com/astrai-team/cancer-detection.git
+cd cancer-detection
 
 # Crear entorno virtual
-python -m venv astrai_env
-source astrai_env/bin/activate  # Linux/Mac
-# astrai_env\Scripts\activate   # Windows
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Instalación para desarrollo
-pip install -e .
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con sus configuraciones
+
+# Ejecutar pruebas
+pytest tests/
+
+# Iniciar la aplicación
+python -m src.main --demo all
 ```
 
 ### Instalación con Docker
+
 ```bash
-# Construir imagen
-docker build -t astrai:latest .
+# Clonar el repositorio
+git clone https://github.com/astrai-team/cancer-detection.git
+cd cancer-detection
 
-# Ejecutar contenedor
-docker run -p 8080:8080 --gpus all astrai:latest
+# Construir y ejecutar con Docker Compose
+docker-compose up -d
+
+# Verificar el estado
+docker-compose ps
+
+# Ver logs
+docker-compose logs -f astrai-api
 ```
 
----
+## Uso Básico
 
-## 🚀 Uso Rápido
+### API REST
 
-### Análisis Básico
 ```python
-from astrai import AdvancedMedicalAnalyzer
+import requests
 
-# Inicializar analizador
-analyzer = AdvancedMedicalAnalyzer()
+# Subir imagen para análisis
+with open('thyroid_image.png', 'rb') as f:
+    response = requests.post(
+        'http://localhost:8000/api/v1/analyze',
+        files={'image': f},
+        data={'patient_id': '12345'}
+    )
 
-# Analizar imagen médica
-resultados, imagen = analyzer.comprehensive_analysis(
-    image_path="mi_imagen.jpg",
-    true_class="benigno"
-)
-
-# Generar reporte médico
-analyzer.generate_medical_report(resultados)
+result = response.json()
+print(f"TI-RADS: {result['tirads']}")
+print(f"Análisis: {result['medical_analysis']}")
 ```
 
-### Análisis en Lote
-```python
-# Cargar dataset
-rutas_imagenes, etiquetas, nombres_clases = analyzer.load_sample_dataset(
-    benign_path="./data/benigno",
-    malignant_path="./data/maligno",
-    normal_path="./data/normal"
-)
+### Interfaz Gráfica
 
-# Procesar múltiples imágenes
-for ruta, etiqueta in zip(rutas_imagenes, etiquetas):
-    resultado = analyzer.comprehensive_analysis(ruta, nombres_clases[etiqueta])
-    print(f"Análisis completado: {resultado['cnn_diagnosis']['predicted_class']}")
+```bash
+# Ejecutar GUI
+python -m src.gui.main_window
 ```
 
-### Dashboard Interactivo
-```python
-# Crear dashboard poblacional
-df_poblacion = analyzer.dashboard.create_population_analytics(todos_resultados)
-analyzer.dashboard.create_interactive_dashboard(df_poblacion)
+### Línea de Comandos
+
+```bash
+# Analizar una imagen
+python -m src.main analyze --image path/to/image.dcm --output report.pdf
+
+# Entrenar modelo personalizado
+python -m src.training.train_cnn --config configs/training_configs/cnn_config.yaml
+
+# Evaluar modelo
+python -m src.evaluation.evaluate --model models/best_model.pth --dataset test_data/
 ```
 
----
-
-## 📊 Resultados de Evaluación
-
-### Métricas de Rendimiento
-| Métrica | Valor | Intervalo de Confianza |
-|---------|-------|------------------------|
-| **Precisión Global** | 94.2% | [92.8%, 95.6%] |
-| **Sensibilidad** | 96.1% | [94.5%, 97.7%] |
-| **Especificidad** | 92.8% | [91.2%, 94.4%] |
-| **Valor Predictivo Positivo** | 89.7% | [87.9%, 91.5%] |
-| **Valor Predictivo Negativo** | 97.3% | [96.1%, 98.5%] |
-| **F1-Score** | 92.8% | [91.4%, 94.2%] |
-| **AUC-ROC** | 0.967 | [0.954, 0.980] |
-
-### Comparación con Métodos Tradicionales
-```
-📈 AstrAI vs Diagnóstico Manual:
-   ├── Tiempo de análisis: 15 seg vs 45 min
-   ├── Consistencia: 99.2% vs 87.4%
-   ├── Detección temprana: +23% mejor
-   └── Costo por análisis: -89% reducción
-```
-
----
-
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
-astrai/
-├── 📁 astrai/                    # Código fuente principal
-│   ├── 🐍 __init__.py
-│   ├── 🧠 models/               # Modelos de IA
-│   │   ├── hybrid_cnn.py
-│   │   ├── fallback_model.py
-│   │   └── ensemble.py
-│   ├── 🔬 analysis/             # Módulos de análisis
-│   │   ├── radiomics.py
-│   │   ├── segmentation.py
-│   │   └── risk_assessment.py
-│   ├── 📊 visualization/        # Visualización y dashboards
-│   │   ├── dashboards.py
-│   │   ├── plots.py
-│   │   └── reports.py
-│   └── 🛠️ utils/               # Utilidades
-│       ├── preprocessing.py
-│       ├── metrics.py
-│       └── io_utils.py
-├── 📁 data/                      # Datos de ejemplo
-├── 📁 docs/                      # Documentación
-├── 📁 tests/                     # Pruebas unitarias
-├── 📁 examples/                  # Ejemplos de uso
-├── 📁 docker/                    # Configuración Docker
-├── 📋 requirements.txt           # Dependencias
-├── 🐳 Dockerfile               # Imagen Docker
-├── ⚙️ setup.py                 # Configuración del paquete
-└── 📖 README.md                # Este archivo
+ASTRAI-Cancer-Detection/
+├── src/                          # Código fuente principal
+│   ├── core/                     # Componentes centrales
+│   ├── data/                     # Procesamiento de datos
+│   ├── models/                   # Modelos de IA
+│   ├── api/                      # API REST
+│   └── gui/                      # Interfaz gráfica
+├── tests/                        # Pruebas automatizadas
+├── configs/                      # Archivos de configuración
+├── deployment/                   # Configuraciones de despliegue
+├── docs/                         # Documentación
+├── scripts/                      # Scripts de utilidad
+└── datasets/                     # Datos de entrenamiento
 ```
 
----
-
-## 🔧 Configuración Avanzada
+## Configuración
 
 ### Variables de Entorno
+
 ```bash
-# Configuración del modelo
-export ASTRAI_MODEL_PATH="/path/to/models"
-export ASTRAI_DEVICE="cuda"  # o "cpu"
-export ASTRAI_BATCH_SIZE=16
+# Configuración de la aplicación
+LOG_LEVEL=INFO
+API_HOST=0.0.0.0
+API_PORT=8000
 
-# Configuración de logging
-export ASTRAI_LOG_LEVEL="INFO"
-export ASTRAI_LOG_FILE="/var/log/astrai.log"
+# Configuración de modelos
+MODEL_CACHE_DIR=./models
+USE_GPU=true
+MAX_BATCH_SIZE=8
 
-# Base de datos (opcional)
-export ASTRAI_DB_URL="postgresql://user:pass@localhost/astrai"
+# Configuración de base de datos
+DATABASE_URL=postgresql://user:pass@localhost/astrai
+REDIS_URL=redis://localhost:6379
 ```
 
-### Configuración Personalizada
-```python
-# config.yaml
+### Configuración de Modelos
+
+Los modelos se configuran mediante archivos YAML en `configs/model_configs/`:
+
+```yaml
+# cnn_config.yaml
 model:
-  architecture: "hybrid"  # "hybrid" o "fallback"
-  confidence_threshold: 0.85
+  name: "ThyroidSegmentationModel"
+  backbone: "resnet50"
+  num_classes: 4
+  pretrained: true
+
+training:
   batch_size: 16
-
-analysis:
-  enable_segmentation: true
-  enable_radiomics: true
-  enable_birads: true
-
-output:
-  save_results: true
-  generate_reports: true
-  create_visualizations: true
+  learning_rate: 0.001
+  epochs: 100
+  optimizer: "adam"
 ```
 
----
+## Desarrollo
 
-## 📈 Benchmarks y Rendimiento
+### Configuración del Entorno de Desarrollo
 
-### Tiempo de Procesamiento
-| Componente | Tiempo Promedio | GPU | CPU |
-|------------|-----------------|-----|-----|
-| **Carga de Imagen** | 0.1s | ✓ | ✓ |
-| **CNN Híbrida** | 2.3s | ✓ | 8.7s |
-| **Análisis Radiológico** | 1.8s | ✓ | ✓ |
-| **Generación de Reporte** | 0.5s | ✓ | ✓ |
-| **Total** | **4.7s** | **13.1s** |
+```bash
+# Instalar dependencias de desarrollo
+pip install -r requirements-dev.txt
 
-### Uso de Memoria
-- **Modelo en memoria**: ~450MB
-- **Procesamiento por imagen**: ~1.2GB
-- **Dashboard interactivo**: ~200MB
+# Configurar pre-commit hooks
+pre-commit install
 
----
+# Ejecutar linting
+black src/ tests/
+isort src/ tests/
+flake8 src/ tests/
 
-## 🧪 Ejemplos de Uso
-
-### 1. Análisis Básico de Imagen
-```python
-from astrai import AdvancedMedicalAnalyzer
-
-# Inicializar
-analyzer = AdvancedMedicalAnalyzer()
-
-# Analizar
-resultados = analyzer.comprehensive_analysis("imagen.jpg", "benigno")
-
-# Mostrar diagnóstico
-print(f"Diagnóstico: {resultados['cnn_diagnosis']['predicted_class']}")
-print(f"Confianza: {resultados['cnn_diagnosis']['confidence']:.2%}")
-print(f"Riesgo: {resultados['risk_assessment']['risk_level']}")
+# Ejecutar pruebas con cobertura
+pytest tests/ --cov=src --cov-report=html
 ```
 
-### 2. Análisis Comparativo
-```python
-# Comparar múltiples imágenes
-imagenes = ["caso1.jpg", "caso2.jpg", "caso3.jpg"]
-resultados = []
+### Contribuir
 
-for imagen in imagenes:
-    resultado = analyzer.comprehensive_analysis(imagen, "desconocido")
-    resultados.append(resultado)
+1. Fork el repositorio
+2. Crear una rama para su feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit sus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crear un Pull Request
 
-# Crear dashboard comparativo
-df = analyzer.dashboard.create_population_analytics(resultados)
-analyzer.dashboard.create_interactive_dashboard(df)
+### Estándares de Código
+
+- Seguir PEP 8 para estilo de Python
+- Usar type hints en todas las funciones
+- Documentar funciones con docstrings
+- Mantener cobertura de pruebas > 80%
+- Usar conventional commits para mensajes
+
+## Despliegue en Producción
+
+### Kubernetes
+
+```bash
+# Aplicar manifiestos de Kubernetes
+kubectl apply -f deployment/kubernetes/
+
+# Verificar el despliegue
+kubectl get pods -n astrai
+kubectl get services -n astrai
+
+# Escalar el despliegue
+kubectl scale deployment astrai-api --replicas=5 -n astrai
 ```
 
-### 3. Integración en Sistema Hospitalario
-```python
-# API REST para integración hospitalaria
-from flask import Flask, request, jsonify
-from astrai import AdvancedMedicalAnalyzer
+### Monitoreo
 
-app = Flask(__name__)
-analyzer = AdvancedMedicalAnalyzer()
+El sistema incluye monitoreo completo con:
 
-@app.route('/analyze', methods=['POST'])
-def analyze_image():
-    file = request.files['image']
-    results = analyzer.comprehensive_analysis(file.filename, "unknown")
-    return jsonify({
-        'diagnosis': results['cnn_diagnosis']['predicted_class'],
-        'confidence': results['cnn_diagnosis']['confidence'],
-        'risk_level': results['risk_assessment']['risk_level']
-    })
+- **Prometheus**: Métricas de sistema y aplicación
+- **Grafana**: Dashboards y visualizaciones
+- **Alertmanager**: Alertas automáticas
+- **Jaeger**: Trazas distribuidas
+
+Acceder a los dashboards:
+- Grafana: http://localhost:3000 (admin/admin)
+- Prometheus: http://localhost:9090
+
+## Documentación
+
+- [Guía de Instalación](docs/installation.md)
+- [Manual de Usuario](docs/user_guide.md)
+- [Documentación de API](docs/api_reference.md)
+- [Guía de Desarrollo](docs/development.md)
+- [Arquitectura del Sistema](docs/architecture.md)
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## Soporte
+
+- **Issues**: [GitHub Issues](https://github.com/astrai-team/cancer-detection/issues)
+- **Documentación**: [Wiki del Proyecto](https://github.com/astrai-team/cancer-detection/wiki)
+- **Email**: support@astrai.com
+
+## Citas y Referencias
+
+Si utiliza ASTRAI en su investigación, por favor cite:
+
+```bibtex
+@software{astrai_cancer_detection,
+  title={ASTRAI: AI System for Thyroid Risk Assessment and Interpretation},
+  author={ASTRAI Team},
+  year={2024},
+  url={https://github.com/astrai-team/cancer-detection}
+}
 ```
 
----
+## Agradecimientos
 
-## 🔍 Validación Clínica
-
-### Estudios Realizados
-1. **Estudio Multicéntrico** (2024)
-   - 15,000 casos de 12 hospitales
-   - Concordancia inter-observador: 94.3%
-   - Publicado en *Journal of Medical AI*
-
-2. **Validación Prospectiva** (2024)
-   - 3,200 casos consecutivos
-   - Seguimiento a 12 meses
-   - Sensibilidad 96.1% vs 89.7% manual
-
-3. **Estudio de Costo-Efectividad** (2024)
-   - Reducción 89% en tiempo de análisis
-   - Ahorro $2.3M anuales por hospital
-   - ROI positivo en 6 meses
-
-### Certificaciones
-- ✅ **ISO 13485**: Sistema de gestión de calidad médica
-- ✅ **IEC 62304**: Software de dispositivos médicos
-- 🔄 **FDA 510(k)**: En proceso de aprobación
-- 🔄 **CE Mark**: Marcado CE europeo en trámite
+- Equipo médico del Hospital XYZ por la validación clínica
+- Comunidad de PyTorch por las herramientas de deep learning
+- Hugging Face por los modelos de lenguaje preentrenados
 
 ---
 
-## 🤝 Contribuir
-
-¡Agradecemos las contribuciones de la comunidad! Consulta nuestra [Guía de Contribución](CONTRIBUTING.md).
-
-### Formas de Contribuir
-- 🐛 **Reportar bugs**: [Issues](https://github.com/tu-usuario/astrai/issues)
-- 💡 **Sugerir características**: [Feature Requests](https://github.com/tu-usuario/astrai/discussions)
-- 📝 **Mejorar documentación**: [Documentation](docs/)
-- 🧪 **Agregar tests**: [Testing Guide](tests/README.md)
-- 🌍 **Traducciones**: [i18n Guide](i18n/README.md)
-
-### Proceso de Desarrollo
-1. Fork del repositorio
-2. Crear rama feature (`git checkout -b feature/nueva-caracteristica`)
-3. Commit cambios (`git commit -am 'Agregar nueva característica'`)
-4. Push a la rama (`git push origin feature/nueva-caracteristica`)
-5. Crear Pull Request
-
----
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
+**ASTRAI Cancer Detection System** - Revolucionando el diagnóstico médico con IA
 
