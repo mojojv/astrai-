@@ -1,6 +1,6 @@
 # ASTRAI Cancer Detection System
 
-![ASTRAI Logo](docs/images/astrai_logo.png)
+![ASTRAI Logo](docs/images/Research.png)
 
 [![CI/CD Pipeline](https://github.com/astrai-team/cancer-detection/workflows/CI/badge.svg)](https://github.com/astrai-team/cancer-detection/actions)
 [![Code Coverage](https://codecov.io/gh/astrai-team/cancer-detection/branch/main/graph/badge.svg)](https://codecov.io/gh/astrai-team/cancer-detection)
